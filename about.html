@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About PR Metal ART – Industrial Laser Cutting & Fabrication</title>
+    <!-- SEO meta -->
+    <meta name="description" content="Learn more about PR Metal ART, a trusted metal fabrication company in India. Our mission, team, state-of-the-art facility, and commitment to quality.">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        /* -------------------- GLOBAL STYLES (identical to homepage) -------------------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #0c0c0c;
+            color: #e0e0e0;
+            line-height: 1.5;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+        section {
+            padding: 1rem 0;
+        }
+        h1, h2, h3 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            border-left: 6px solid #f97316;
+            padding-left: 1.5rem;
+        }
+        .section-subhead {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 2.5rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: transparent;
+            border: 2px solid #f97316;
+            color: #f97316;
+            font-weight: 600;
+            padding: 0.85rem 2.2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background-color: #f97316;
+            color: #0a0a0a;
+            border: 2px solid #f97316;
+        }
+        .btn-primary:hover {
+            background-color: transparent;
+            color: #f97316;
+        }
+        .btn-outline:hover {
+            background-color: #f97316;
+            color: #0a0a0a;
+        }
+        /* navbar */
+        .navbar {
+            background-color: #0a0a0a;
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #f97316;
+        }
+        .nav-container {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #f97316;
+            letter-spacing: -0.02em;
+        }
+        .logo span {
+            color: #e0e0e0;
+            font-weight: 400;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+            font-weight: 500;
+        }
+        .nav-links a {
+            color: #e0e0e0;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #f97316;
+        }
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #f97316;
+        }
+        @media (max-width: 900px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #111;
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease;
+                border-bottom: 2px solid #f97316;
+            }
+            .nav-links.active {
+                max-height: 500px;
+            }
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+                padding: 1.2rem 0;
+                border-top: 1px solid #2a2a2a;
+            }
+        }
+        /* about page specific hero */
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://placehold.co/1600x600/2a2a2a/666?text=About+Us+Factory') center/cover no-repeat;
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-size: 4rem;
+        }
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 1rem auto 0;
+        }
+        /* story grid */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .story-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #c0c0c0;
+        }
+        .story-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .story-stat {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 4px solid #f97316;
+        }
+        .story-stat .number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #f97316;
+            line-height: 1.2;
+        }
+        /* team grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .team-member {
+            background: #1a1a1a;
+            padding: 2rem 1.5rem;
+            border: 1px solid #2a2a2a;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
+            border-color: #f97316;
+        }
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #2a2a2a;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #f97316;
+        }
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+        .team-member .position {
+            color: #f97316;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .team-member p {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+        /* values list */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .value-item {
+            background: #1a1a1a;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        .value-item i {
+            font-size: 3rem;
+            color: #f97316;
+            margin-bottom: 1rem;
+        }
+        .value-item h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        /* facility gallery */
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .facility-item {
+            background: #1a1a1a;
+            border: 1px solid #333;
+        }
+        .facility-img {
+            height: 200px;
+            background: #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6a6a6a;
+        }
+        .facility-item p {
+            padding: 1rem;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .story-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .facility-grid { grid-template-columns: 1fr; }
+            .page-hero h1 { font-size: 2.5rem; }
+        }
+        /* footer (same as homepage) */
+        .footer {
+            background: #050505;
+            border-top: 3px solid #f97316;
+            padding: 3rem 0 1.5rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .footer-col h4 {
+            color: #f97316;
+            margin-bottom: 1.5rem;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: 0.8rem;
+        }
+        .footer-col a:hover {
+            color: #f97316;
+        }
+        .copyright {
+            text-align: center;
+            color: #6a6a6a;
+            border-top: 1px solid #2a2a2a;
+            padding-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        /* fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .active {
+            color: #f97316;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR (same as homepage, with active link) -->
+    <nav class="navbar">
+        <div class="nav-container">
+             <a href="index.html">
+            <div class="logo">PR Metal ART <span>est. 2015</span></div></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="index.html#why-us">Why Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>About <span class="orange">PR Metal ART</span></h1>
+            <p>Precision, partnership, and industrial excellence since 2015</p>
+        </div>
+    </section>
+
+    <!-- OUR STORY (with stats) -->
+    <section>
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-text fade-in">
+                    <h2>Our Story</h2>
+                    <p>Founded in Pune in 2015, PR Metal ART began with a single laser cutting machine and a vision to deliver world-class metal fabrication to Indian industries. Over the past decade, we've grown into a trusted partner for over 100 industrial clients, from automotive giants to infrastructure builders.</p>
+                    <p>What sets us apart is our relentless focus on precision. Every sheet we cut, every component we bend, is inspected to tolerances as tight as 0.1mm. Our investment in the latest laser technology and a highly skilled team ensures that even the most complex bulk orders are delivered on time, every time.</p>
+                    <p>Today, we operate from a 50,000 sq. ft. facility equipped with 5 high-power laser cutters, 8 CNC press brakes, and a dedicated quality lab. But our growth hasn't changed our core: we remain a family-run business that values long-term relationships over short-term gains.</p>
+                    <div class="story-stats">
+                        <div class="story-stat">
+                            <div class="number" data-target="2015">0</div>
+                            <div>Founded</div>
+                        </div>
+                        <div class="story-stat">
+                            <div class="number" data-target="50">0</div>
+                            <div>Skilled Workers</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-image fade-in">
+                    <img src="https://placehold.co/600x400/2a2a2a/666?text=Factory+Floor" alt="Factory floor" style="width:100%; border: 2px solid #333;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section style="background:#111;">
+        <div class="container">
+            <div class="story-grid">
+                <div class="fade-in">
+                    <h2>Our Mission</h2>
+                    <p class="section-subhead">To empower Indian manufacturing with precision metal components that exceed expectations, delivered with integrity and speed.</p>
+                </div>
+                <div class="fade-in">
+                    <h2>Our Vision</h2>
+                    <p class="section-subhead">To be the most trusted partner for industrial laser cutting and fabrication in India, known for innovation, quality, and customer-centricity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE VALUES -->
+    <section>
+        <div class="container">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-item fade-in">
+                    <i class="fas fa-bullseye"></i>
+                    <h4>Precision First</h4>
+                    <p>We never compromise on accuracy. Every cut, bend, and weld is checked.</p>
+                </div>
+                <div class="value-item fade-in">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Integrity</h4>
+                    <p>Honest communication, fair pricing, and keeping promises.</p>
+                </div>
+                <div class="value-item fade-in">
+                    <i class="fas fa-users"></i>
+                    <h4>Partnership</h4>
+                    <p>We grow with our clients and treat their challenges as our own.</p>
+                </div>
+                <div class="value-item fade-in">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Innovation</h4>
+                    <p>Continuous investment in better machines and smarter processes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR TEAM -->
+    <section style="background:#111;">
+        <div class="container">
+            <h2>Meet the Leadership</h2>
+            <div class="team-grid">
+               <div class="team-member fade-in">
+    <div class="member-photo">
+        <img src="images/ceo.jpg" alt="Rajesh Patil CEO" style="width:120px;height:120px;border-radius:50%;object-fit:cover;">
+    </div>
+    <h3>Pankaj ji</h3>
+    <div class="position">Founder & CEO</div>
+    <p>25 years in metal fabrication. Rajesh leads with hands-on experience and a passion for precision.</p>
+     </div>
+                <div class="team-member fade-in">
+                    <div class="member-photo"><i class="fas fa-user-cog fa-4x" style="color:#f97316;"></i></div>
+                    <h3>Anita Deshmukh</h3>
+                    <div class="position">Head of Operations</div>
+                    <p>Ensures every order flows smoothly from laser cutting to dispatch.</p>
+                </div>
+                <div class="team-member fade-in">
+                    <div class="member-photo"><i class="fas fa-user-astronaut fa-4x" style="color:#f97316;"></i></div>
+                    <h3>Suresh Iyer</h3>
+                    <div class="position">Chief Technologist</div>
+                    <p>Drives our laser technology and quality assurance processes.</p>
+                </div>
+                <div class="team-member fade-in">
+                    <div class="member-photo"><i class="fas fa-user-tie fa-4x" style="color:#f97316;"></i></div>
+                    <h3>Meera Nair</h3>
+                    <div class="position">Client Relations</div>
+                    <p>Builds lasting partnerships with industrial clients across India.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FACILITY & TECHNOLOGY -->
+    <section>
+        <div class="container">
+            <h2>Our Facility</h2>
+            <p class="section-subhead">State-of-the-art machines in a 50,000 sq. ft. plant</p>
+            <div class="facility-grid">
+                <div class="facility-item fade-in">
+                    <div class="facility-img"><i class="fas fa-laser fa-3x"></i> Laser bay</div>
+                    <p>5 high-power laser cutters (1–16mm capacity)</p>
+                </div>
+                <div class="facility-item fade-in">
+                    <div class="facility-img"><i class="fas fa-hammer fa-3x"></i> Bending section</div>
+                    <p>8 CNC press brakes with 6-axis backgauges</p>
+                </div>
+                <div class="facility-item fade-in">
+                    <div class="facility-img"><i class="fas fa-ruler-combined fa-3x"></i> Quality lab</div>
+                    <p>CMM, thickness gauges, and hardness testers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (exactly like homepage) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#work">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Laser Cutting</li>
+                        <li>Metal Fabrication</li>
+                        <li>Sheet Bending</li>
+                        <li>Bulk Production</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li>Stener Units</li>
+                        <li>Blender Units</li>
+                        <li>Hopper Units</li>
+                        <li>Conveyors</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope"></i> info@prmetalart.in</li>
+                        <li><i class="fas fa-map"></i> Pune, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2026 PR Metal ART — All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Mobile hamburger
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            if (hamburger) {
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+
+            // Close mobile menu on resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900 && navLinks) {
+                    navLinks.classList.remove('active');
+                }
+            });
+
+            // Smooth scroll for anchor links (only on same page)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === "#") return;
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl) {
+                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Counters for stats (with intersection observer)
+            const counters = document.querySelectorAll('.number[data-target]');
+            const speed = 200;
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'), 10);
+                        let count = 0;
+                        const updateCounter = () => {
+                            const increment = target / speed;
+                            if (count < target) {
+                                count += increment;
+                                counter.innerText = Math.ceil(count);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.innerText = target;
+                            }
+                        };
+                        updateCounter();
+                        counterObserver.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+            counters.forEach(c => counterObserver.observe(c));
+
+            // Fade-in animations
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+            fadeElements.forEach(el => fadeObserver.observe(el));
+        })();
+    </script>
+</body>
+</html>
