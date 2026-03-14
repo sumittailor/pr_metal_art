@@ -99,19 +99,35 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+             padding:0 40px;
         }
-        .logo {
-            font-size: 1.9rem;
-            font-weight: 800;
-            color: #f97316;
-            letter-spacing: -0.02em;
-        }
-        .logo span {
-            color: #e0e0e0;
-            font-weight: 400;
-            font-size: 1rem;
-            margin-left: 0.5rem;
-        }
+        
+      .logo{
+  display:flex;
+  align-items:center;
+}
+
+.logo img{
+  height:90px;
+  width:auto;
+}
+
+.logo span{
+  font-size:14px;
+  color:#ccc;
+  margin: left 25px;
+  margin-top:-10px;
+}
+ header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+}
+
+.logo{
+  margin-left:0;
+}
         .nav-links {
             display: flex;
             gap: 2.2rem;
@@ -174,7 +190,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 100%;    
             height: 100%;
             z-index: 1;
         }
@@ -459,6 +475,26 @@
         .work-card:hover .image-placeholder {
             transform: scale(1.05);
         }
+        /*ADDTIONAL CSS FOR THIS */
+        .process-grid, .machinery-grid, .clients-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    }
+    
+    .step .step-number{
+            font-size: 2rem;
+    font-weight: 800;
+    color: #f97316;
+    margin-bottom: 0.5rem;
+    }
+    .step {
+    background: #1a1a1a;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 4px solid #f97316;
+}
     </style>
 </head>
 <body>
@@ -466,7 +502,11 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="#hero">
-            <div class="logo">PR Metal ART <span>est. 2015</span></div></a>
+    <div class="logo">
+        <img src="assets/main logo.png" alt="PR Metal ART Logo">
+        <span>est. 2014</span>
+    </div>
+   </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -484,7 +524,7 @@
     <section id="hero" class="hero">
         <!-- slider images container -->
         <div class="slider-container">
-            <div class="slide active" style="background-image: url('Banner L1.jpg');"></div>
+            <div class="slide active" style="background-image: url('assets/Banner\ L1.jpg');"></div>
             <div class="slide" style="background-image: url('https://placehold.co/1600x900/1e1e1e/5a5a5a?text=Laser+Cutting');"></div>
             <div class="slide" style="background-image: url('https://placehold.co/1600x900/232323/6a6a6a?text=Metal+Bending');"></div>
         </div>
@@ -509,7 +549,8 @@
         <div class="container">
             <h2>About PR Metal ART</h2>
             <div style="max-width: 900px; margin-bottom: 2rem;">
-                <p class="section-subhead">PR Metal ART is a trusted manufacturing company in India specializing in laser cutting and metal fabrication. We manufacture custom industrial products according to client requirements using advanced laser cutting and iron bending machines. Our services focus mainly on bulk manufacturing for companies and industrial partners.</p>
+                <p class="section-subhead">PR Metal ART is a professional sheet metal manufacturing company specializing in precision laser cutting, fabrication, and industrial metal solutions. We manufacture EV charging cabinets, electrical boxes, metal furniture, pharmaceutical machinery components, and custom sheet metal products.</p>
+                <p class="section-subhead">Since 2014, we have successfully delivered hundreds of industrial fabrication projects for companies across India. Our state-of-the-art facility in Jaipur serves industries including pharmaceutical, EV charging infrastructure, solar, and industrial manufacturing.</p>
             </div>
             <div class="stats-grid">
                 <div class="stat-item">
@@ -525,8 +566,9 @@
                     <div class="stat-label">Product Categories</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number"><i class="fas fa-laser" style="font-size:2.5rem;"></i></div>
-                    <div class="stat-label">High Precision Laser</div>
+                    <div class="stat-number"><i class="fas fa-industry style="font-size:2.5rem;"></i></div>
+                    <div class="stat-label">Serving Multiple Industries
+</div>
                 </div>
             </div>
         </div>
@@ -538,12 +580,12 @@
             <h2>Our Manufacturing Services</h2>
             <div class="services-grid">
                 <div class="service-card fade-in">
-                    <i class="fas fa-cut service-icon"></i>
+                    <i class="fas fa-crosshairs service-icon"></i>
                     <h3>Laser Cutting</h3>
                     <p>Precision laser cutting for iron sheets from 1mm to 16mm thickness.</p>
                 </div>
                 <div class="service-card fade-in">
-                    <i class="fas fa-welder service-icon"></i>
+                    <i class="fas fa-fire service-icon"></i>
                     <h3>Metal Fabrication</h3>
                     <p>Custom manufacturing of industrial metal components.</p>
                 </div>
@@ -553,13 +595,29 @@
                     <p>High accuracy bending using advanced iron bending machines.</p>
                 </div>
                 <div class="service-card fade-in">
-                    <i class="fas fa-industry service-icon"></i>
-                    <h3>Bulk Production</h3>
-                    <p>Large scale manufacturing for companies and factories.</p>
+                    <i class="fas fa-paint-roller service-icon"></i>
+                    <h3>Powder Coating Finishing</h3>
+                    <p>Durable, high-quality finishes for industrial products.</p>
                 </div>
             </div>
         </div>
     </section>
+     <!-- MANUFACTURING PROCESS (7 steps) - HORIZONTAL LAYOUT -->
+    <section id="process">
+        <div class="container">
+            <h2>Our Manufacturing Process</h2>
+            <div class="process-grid">
+                <div class="step fade-in"><div class="step-number">1</div> CNC Laser Cutting</div>
+                <div class="step fade-in"><div class="step-number">2</div> CNC Bending</div>
+                <div class="step fade-in"><div class="step-number">3</div> Welding & Grinding</div>
+                <div class="step fade-in"><div class="step-number">4</div> Quality Check</div>
+                <div class="step fade-in"><div class="step-number">5</div> Powder Coating</div>
+                <div class="step fade-in"><div class="step-number">6</div> Final Inspection</div>
+                <div class="step fade-in"><div class="step-number">7</div> Dispatch</div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- 4️⃣ PRODUCTS WE MANUFACTURE -->
     <section id="products">
