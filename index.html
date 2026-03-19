@@ -86,7 +86,6 @@
         /* navbar */
         .navbar {
             background-color: #0a0a0a;         /* black */
-            padding: 1.2rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -148,6 +147,7 @@
             cursor: pointer;
             color: #f97316;
         }
+
         /* mobile nav */
         @media (max-width: 900px) {
             .hamburger {
@@ -177,6 +177,7 @@
                 border-top: 1px solid #2a2a2a;
             }
         }
+
         /* ---------- HERO SLIDER ---------- */
         .hero {
             position: relative;
@@ -495,7 +496,224 @@
     text-align: center;
     border-bottom: 4px solid #f97316;
 }
+/*Prodcut squre size css */
+.product-img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:8px;
+}
+ .social-icons {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+        .social-icons a {
+            color: #f97316;
+            font-size: 1.5rem;
+        }
+
+/*=================partner secation scroll=================*/
+#partners{
+padding:70px 0;
+text-align:center;
+}
+
+#partners h2{
+font-size:2.5rem;
+margin-bottom:40px;
+text-align:left;
+}
+
+.partners-wrapper{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.partners-slider{
+overflow:hidden;
+flex:1;
+max-width:1600px;
+}
+
+.partners-grid{
+display:flex;
+gap:20px;
+transition:transform 0.5s ease;
+}
+
+.partner-logo{
+min-width:200px;
+color:white;
+padding:25px;
+background:#d56514;
+border-radius:10px;
+font-weight:600;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.partner-logo:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.partner-btn{
+background:#000;
+color:#fff;
+border:none;
+font-size:22px;
+padding:14px 18px;
+cursor:pointer;
+border-radius:50%;
+transition:0.3s;
+}
+
+.partner-btn:hover{
+background:#fdfdfd;
+color: black;
+}
+/* ===== MOBILE 320px OPTIMIZATION ===== */
+@media (max-width: 320px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 95%;
+        padding: 2rem 0;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        padding-left: 1rem;
+    }
+
+    .section-subhead {
+        font-size: 0.9rem;
+    }
+
+    /* NAVBAR */
+    .nav-container {
+        padding: 0 10px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .logo span {
+        font-size: 10px;
+    }
+
+    .hamburger {
+        font-size: 1.5rem;
+    }
+
+    /* HERO */
+    .hero {
+        min-height: 60vh;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    /* SLIDER BUTTON */
+    .slider-btn {
+        font-size: 1.2rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    /* GRID FIX */
+    .services-grid,
+    .products-grid,
+    .work-grid,
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* CARDS */
+    .service-card,
+    .product-card,
+    .work-card,
+    .why-card {
+        padding: 1.2rem 1rem;
+    }
+
+    .service-card h3,
+    .why-card h3 {
+        font-size: 1.2rem;
+    }
+
+    /* IMAGES */
+    .image-placeholder {
+        height: 140px;
+    }
+
+    .product-img {
+        border-radius: 5px;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    input, textarea {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+
+    /* FOOTER */
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        padding: 2rem 0;
+    }
+
+    /* PARTNERS */
+    .partner-logo {
+        min-width: 140px;
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .partner-btn {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    /* SOCIAL */
+    .social-icons a {
+        font-size: 1.2rem;
+    }
+
+}
     </style>
+
+    
 </head>
 <body>
     <!-- NAVIGATION -->
@@ -504,12 +722,12 @@
             <a href="#hero">
     <div class="logo">
         <img src="assets/main logo.png" alt="PR Metal ART Logo">
-        <span>est. 2014</span>
+        
     </div>
    </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="/about.html">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="#work">Work</a></li>
@@ -525,8 +743,9 @@
         <!-- slider images container -->
         <div class="slider-container">
             <div class="slide active" style="background-image: url('assets/Banner\ L1.jpg');"></div>
-            <div class="slide" style="background-image: url('https://placehold.co/1600x900/1e1e1e/5a5a5a?text=Laser+Cutting');"></div>
-            <div class="slide" style="background-image: url('https://placehold.co/1600x900/232323/6a6a6a?text=Metal+Bending');"></div>
+            <div class="slide" style="background-image: url('assets/Banner\ B2.jpg');"></div>
+            <div class="slide" style="background-image: url('assets/Banner\ W3.jpg');"></div>
+            <div class="slide" style="background-image: url('assets/Banner\ W4.jpg');"></div>
         </div>
         <!-- overlay is done via pseudo-element for consistency -->
         <div class="container hero-content">
@@ -620,64 +839,95 @@
 
 
     <!-- 4️⃣ PRODUCTS WE MANUFACTURE -->
-    <section id="products">
-        <div class="container">
-            <h2>Products We Manufacture</h2>
-            <div class="products-grid">
-                <div class="product-card fade-in">
-                    <div class="image-placeholder"><i class="fas fa-image"></i> Stener Unit</div>
-                    <h4>Stener Units</h4>
-                    <p>Heavy-duty industrial stener components.</p>
-                </div>
-                <div class="product-card fade-in">
-                    <div class="image-placeholder"><i class="fas fa-image"></i> Blender Unit</div>
-                    <h4>Blender Units</h4>
-                    <p>Precision blender drums and frames.</p>
-                </div>
-                <div class="product-card fade-in">
-                    <div class="image-placeholder"><i class="fas fa-image"></i> Hopper Unit</div>
-                    <h4>Hopper Units</h4>
-                    <p>Custom hoppers for material handling.</p>
-                </div>
-                <div class="product-card fade-in">
-                    <div class="image-placeholder"><i class="fas fa-image"></i> Conveyor</div>
-                    <h4>Conveyor Systems</h4>
-                    <p>Modular conveyor parts and frames.</p>
-                </div>
-                <div class="product-card fade-in">
-                    <div class="image-placeholder"><i class="fas fa-image"></i> Battery Boxes</div>
-                    <h4>Battery Boxes</h4>
-                    <p>Heavy gauge iron battery enclosures.</p>
-                </div>
-                <div class="product-card fade-in">
-                    <div class="image-placeholder"><i class="fas fa-image"></i> Custom Fab</div>
-                    <h4>Custom Industrial</h4>
-                    <p>Any custom fabrication as per drawing.</p>
-                </div>
+   <section id="products">
+    <div class="container">
+        <h2>Products We Manufacture</h2>
+
+        <div class="products-grid">
+            <div class="product-card fade-in">
+                <img src="assets/EV charaging station.jpg" alt="Stener Unit" class="product-img">
+                <h4>EV Charging Cabinets</h4>
+                <p>Protective cabinets housing EV charger electrical components.</p>
             </div>
+
+            <div class="product-card fade-in">
+                <img src="assets/Steel furniture for Pharma industries.jpg" alt="Blender Unit" class="product-img">
+                <h4>Pharma steel furniture</h4>
+                <p>We make pharma steel furniture industries for lab setups</p>
+            </div>
+
+            <div class="product-card fade-in">
+                <img src="assets/Electrical Boxes.jpg" alt="Custom Fab" class="product-img">
+                <h4>Electrical Boxes</h4>
+                <p>Electrical Boxes for Safe and Efficient Power Setup at homes</p>
+            </div>
+
+            <div class="product-card fade-in">
+                <img src="assets/Stener Units.jpg" alt="Stener Unit" class="product-img">
+                <h4>Stener Units</h4>
+                <p>Heavy-duty industrial stener components.</p>
+            </div>
+
+            <div class="product-card fade-in">
+                <img src="assets/Blender Units.png" alt="Blender Unit" class="product-img">
+                <h4>Blender Units</h4>
+                <p>Precision blender drums and frames.</p>
+            </div>
+
+            <div class="product-card fade-in">
+                <img src="assets/Hopper Units.jpg" alt="Hopper Unit" class="product-img">
+                <h4>Hopper Units</h4>
+                <p>Custom hoppers for material handling.</p>
+            </div>
+
+            <div class="product-card fade-in">
+                <img src="assets/Conveyor Systems.jpg" alt="Conveyor" class="product-img">
+                <h4>Conveyor Systems</h4>
+                <p>Modular conveyor parts and frames.</p>
+            </div>
+
+            <div class="product-card fade-in">
+                <img src="assets/Battery Boxes.jpg" alt="Battery Boxes" class="product-img">
+                <h4>Battery Boxes</h4>
+                <p>Heavy gauge iron battery enclosures.</p>
+            </div>
+
+            <div class="product-card fade-in">
+                <img src="assets/Custom Industrial.png" alt="Custom Fab" class="product-img">
+                <h4>Custom Industrial</h4>
+                <p>Any custom fabrication as per drawing.</p>
+            </div>
+
+            <div class="product-card fade-in">
+                <img src="assets/CNC Jali.jpg" alt="Custom Fab" class="product-img">
+                <h4>CNC Jali</h4>
+                <p>CNC Jali Iron Sheets for Modern Designs</p>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- 5️⃣ OUR WORK / PROJECTS -->
     <section id="work">
         <div class="container">
             <h2>Our Work</h2>
-            <p class="section-subhead">We have successfully completed 800+ industrial manufacturing projects for companies across India.</p>
+            <p class="section-subhead">We have successfully completed 200+ industrial manufacturing projects for companies across India.</p>
             <div class="work-grid">
                 <div class="work-card fade-in">
-                    <div class="image-placeholder"><i class="fas fa-image"></i> Laser cut frames</div>
+                    <img src="assets/Industrial Racks.jpg" alt="Custom Fab" class="product-img">
                     <h4>Industrial Racks</h4>
                 </div>
                 <div class="work-card fade-in">
-                    <div class="image-placeholder"><i class="fas fa-image"></i> Bending job</div>
+                    <img src="assets/Chassis components.jpg" alt="Custom Fab" class="product-img">
                     <h4>Chassis components</h4>
                 </div>
                 <div class="work-card fade-in">
-                    <div class="image-placeholder"><i class="fas fa-image"></i> Assembly</div>
+                    <img src="assets/Motor housings.jpg" alt="Custom Fab" class="product-img">
                     <h4>Motor housings</h4>
                 </div>
                 <div class="work-card fade-in">
-                    <div class="image-placeholder"><i class="fas fa-image"></i> Large structure</div>
+                    <img src="assets/Storage tanks.jpg" alt="Custom Fab" class="product-img">
                     <h4>Storage tanks</h4>
                 </div>
             </div>
@@ -699,115 +949,172 @@
     </section>
 
     <!-- 7️⃣ PARTNERS -->
-    <section id="partners">
-        <div class="container">
-            <h2>Trusted by 100+ Industrial Partners Across India</h2>
-            <div class="partners-grid">
-                <div class="partner-logo">Bharat Forge</div>
-                <div class="partner-logo">TATA Steel</div>
-                <div class="partner-logo">L&T</div>
-                <div class="partner-logo">JSW Group</div>
-                <div class="partner-logo">Mahindra</div>
-                <div class="partner-logo">Ashok Leyland</div>
-            </div>
-        </div>
-    </section>
+   <section id="partners">
+<div class="container">
+
+<h2>Trusted by 100+ Industrial Partners Across India</h2>
+
+<div class="partners-wrapper">
+
+<button class="partner-btn left">&#10094;</button>
+
+<div class="partners-slider">
+<div class="partners-grid">
+
+<div class="partner-logo">Xobolt</div>
+<div class="partner-logo">Uprising Science</div>
+<div class="partner-logo">Amol Pharma</div>
+<div class="partner-logo">Jawa Pharma</div>
+<div class="partner-logo">DD Pharma</div>
+<div class="partner-logo">Manor and Muse</div>
+<div class="partner-logo">Sankalp International</div>
+<div class="partner-logo">Harsh Engineering</div>
+<div class="partner-logo">Shree Jee EV</div>
+<div class="partner-logo">Let’s go, EV charger</div>
+
+</div>
+</div>
+
+<button class="partner-btn right">&#10095;</button>
+
+</div>
+
+</div>
+</section>
 
     <!-- 8️⃣ CONTACT -->
     <section id="contact">
-        <div class="container">
-            <h2>Request a Quote</h2>
-            <div class="contact-grid">
-                <div class="contact-form">
-                    <form id="quoteForm">
-                        <div class="form-group"><input type="text" placeholder="Name" required></div>
-                        <div class="form-group"><input type="tel" placeholder="Phone" required></div>
-                        <div class="form-group"><input type="email" placeholder="Email" required></div>
-                        <div class="form-group"><textarea rows="4" placeholder="Project Requirement"></textarea></div>
-                        <button type="submit" class="btn btn-primary">Request a Quote</button>
-                    </form>
+        <div class="container"> 
+    <h2>Request a Quote</h2>
+
+    <div class="contact-grid">
+        <div class="contact-form">
+
+            <form id="quoteForm" action="send-mail.php" method="POST">
+
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Name" required>
                 </div>
+
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Phone" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="form-group">
+                    <textarea name="message" rows="4" placeholder="Project Requirement"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Request a Quote
+                </button>
+
+            </form>
+
+        </div>
                 <div class="contact-info">
                     <p><i class="fas fa-building"></i> PR Metal ART</p>
-                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-                    <p><i class="fas fa-envelope"></i> sales@prmetalart.in</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+919887666699">+91 9887666699</a></p>
+                    <p><i class="fas fa-envelope"></i> prmetalart@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Plot No. 1, Nandpuri Bhadarna, Near Bhagwati Nursery, VKI Jaipur – 302013</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 9️⃣ FOOTER -->
+   <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
+                    <h4>PR Metal ART</h4>
+                    <p style="color:#9ca3af;">Where Precision Meets Perfection</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://in.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/?hl=en"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="/about.html">About</a></li>
-                        <li><a href="#services">Services</a></li>
                         <li><a href="#products">Products</a></li>
-                        <li><a href="#work">Projects</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li>Laser Cutting</li>
-                        <li>Metal Fabrication</li>
-                        <li>Sheet Bending</li>
-                        <li>Bulk Production</li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#clients">Clients</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Products</h4>
                     <ul>
-                        <li>Stener Units</li>
-                        <li>Blender Units</li>
-                        <li>Hopper Units</li>
-                        <li>Conveyors</li>
+                        <li>EV Cabinets</li>
+                        <li>Electrical Boxes</li>
+                        <li>CNC Jali</li>
+                        <li>Cable Trays</li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
-                        <li><i class="fas fa-envelope"></i> info@prmetalart.in</li>
-                        <li><i class="fas fa-map"></i> India</li>
+                        <li><i class="fas fa-phone"></i><a href="tel:+919887666699">+91 9887666699</a></li>
+                        <li><i class="fas fa-envelope"></i> prmetalart@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i>  Plot No. 1, Nandpuri Bhadarna, Near Bhagwati Nursery, VKI Jaipur – 302013</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                © 2026 PR Metal ART — All Rights Reserved
+                © 2026 PR Metal ART — Where Precision Meets Perfection
             </div>
         </div>
     </footer>
 
     <script>
         (function() {
-            // 1) MOBILE HAMBURGER TOGGLE
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('navLinks');
-            hamburger.addEventListener('click', (e) => {
-                navLinks.classList.toggle('active');
-            });
+    // Mobile hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
 
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Close menu on link click
+    const navItems = document.querySelectorAll('#navLinks a');
+    navItems.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Close mobile menu on resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 900 && navLinks) {
+            navLinks.classList.remove('active');
+        }
+    });
             // 2) SMOOTH SCROLLING (with offset for sticky nav)
-            const navLinksItems = document.querySelectorAll('.nav-links a');
-            navLinksItems.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href').substring(1); // remove #
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
+           // const navLinksItems = document.querySelectorAll('.nav-links a');
+            //navLinksItems.forEach(link => {
+                //link.addEventListener('click', (e) => {
+                    //e.preventDefault();
+                    //const targetId = link.getAttribute('href').substring(1); // remove #
+                    //const targetElement = document.getElementById(targetId);
+                    //if (targetElement) {
+                     //   window.scrollTo({
+                            //top: targetElement.offsetTop - 80,
+                           // behavior: 'smooth'
+                       // });
+                   // }
                     navLinks.classList.remove('active');
-                });
-            });
+//});
+           // });
 
             // 3) COUNTER ANIMATION
             const counters = document.querySelectorAll('.stat-counter');
@@ -910,17 +1217,47 @@
             startAutoSlide();
 
             // 6) Form submit demo
-            const form = document.getElementById('quoteForm');
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Thank you! A quote will be sent shortly (demo).');
-            });
-
+            
             // 7) Close mobile menu on resize
             window.addEventListener('resize', () => {
                 if (window.innerWidth > 900) navLinks.classList.remove('active');
             });
         })();
+        // partner scroll animation
+        const track = document.querySelector(".partners-grid");
+const leftBtn = document.querySelector(".partner-btn.left");
+const rightBtn = document.querySelector(".partner-btn.right");
+
+let scroll = 0;
+
+rightBtn.onclick = () => {
+scroll += 220;
+track.style.transform = `translateX(-${scroll}px)`;
+};
+
+leftBtn.onclick = () => {
+scroll -= 220;
+
+if(scroll < 0){
+scroll = 0;
+}
+
+track.style.transform = `translateX(-${scroll}px)`;
+};
+
+function autoScroll(){
+
+scroll += 220;
+
+if(scroll > track.scrollWidth - 1000){
+scroll = 0;
+}
+
+track.style.transform = `translateX(-${scroll}px)`;
+
+}
+
+setInterval(autoScroll,3000);
     </script>
     <noscript>Please enable JavaScript for full experience.</noscript>
 </body>
