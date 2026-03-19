@@ -14,21 +14,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
         /* -------------------- GLOBAL STYLES (identical to homepage) -------------------- */
-        * {
+       * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background-color: #0c0c0c;
-            color: #e0e0e0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #0c0c0c;       /* deep black background */
+            color: #e0e0e0;                  /* soft steel */
             line-height: 1.5;
+            scroll-behavior: smooth;          /* fallback smooth, but we enhance with js */
         }
         a {
             text-decoration: none;
             color: inherit;
         }
+        /* container */
         .container {
             width: 90%;
             max-width: 1280px;
@@ -38,6 +40,7 @@
         section {
             padding: 1rem 0;
         }
+        /* typography */
         h1, h2, h3 {
             font-weight: 700;
             letter-spacing: -0.02em;
@@ -45,7 +48,7 @@
         h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            border-left: 6px solid #f97316;
+            border-left: 6px solid #f97316;    /* orange accent */
             padding-left: 1.5rem;
         }
         .section-subhead {
@@ -53,6 +56,7 @@
             color: #b0b0b0;
             margin-bottom: 2.5rem;
         }
+        /* buttons */
         .btn {
             display: inline-block;
             background-color: transparent;
@@ -60,6 +64,7 @@
             color: #f97316;
             font-weight: 600;
             padding: 0.85rem 2.2rem;
+            margin-right: 1rem;
             transition: all 0.3s ease;
             cursor: pointer;
             font-size: 1rem;
@@ -79,7 +84,7 @@
         }
         /* navbar */
         .navbar {
-            background-color: #0a0a0a;
+            background-color: #0a0a0a;         /* black */
             padding: 1.2rem 0;
             position: sticky;
             top: 0;
@@ -93,19 +98,35 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+             padding:0 40px;
         }
-        .logo {
-            font-size: 1.9rem;
-            font-weight: 800;
-            color: #f97316;
-            letter-spacing: -0.02em;
-        }
-        .logo span {
-            color: #e0e0e0;
-            font-weight: 400;
-            font-size: 1rem;
-            margin-left: 0.5rem;
-        }
+        
+      .logo{
+  display:flex;
+  align-items:center;
+}
+
+.logo img{
+  height:90px;
+  width:auto;
+}
+
+.logo span{
+  font-size:14px;
+  color:#ccc;
+  margin: left 25px;
+  margin-top:-10px;
+}
+ header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+}
+
+.logo{
+  margin-left:0;
+}
         .nav-links {
             display: flex;
             gap: 2.2rem;
@@ -115,9 +136,9 @@
         .nav-links a {
             color: #e0e0e0;
             transition: color 0.2s;
+            font-size: 1rem;
         }
-        .nav-links a:hover,
-        .nav-links a.active {
+        .nav-links a:hover {
             color: #f97316;
         }
         .hamburger {
@@ -219,8 +240,8 @@
             border-color: #f97316;
         }
         .member-photo {
-            width: 150px;
-            height: 150px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
             background: #2a2a2a;
             margin: 0 auto 1.5rem;
@@ -229,6 +250,11 @@
             justify-content: center;
             border: 3px solid #f97316;
         }
+        .member-photo img {width: 300px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;}
+        
         .team-member h3 {
             font-size: 1.5rem;
             margin-bottom: 0.3rem;
@@ -338,32 +364,182 @@
         .active {
             color: #f97316;
         }
+        /* addinational css */
+        .facility-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.facility-item {
+    text-align: center;
+}
+
+.facility-item h3 {
+    margin-top: 10px;
+}
+/* small Mobile layout 320px */
+/* ===== 320px MOBILE OPTIMIZATION ===== */
+@media (max-width: 320px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 95%;
+        padding: 2rem 0;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        padding-left: 1rem;
+    }
+
+    .section-subhead {
+        font-size: 0.9rem;
+    }
+
+    /* NAVBAR */
+    .nav-container {
+        padding: 0 10px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .logo span {
+        font-size: 10px;
+    }
+
+    .hamburger {
+        font-size: 1.5rem;
+    }
+
+    /* HERO */
+    .page-hero {
+        min-height: 30vh;
+        padding: 20px 10px;
+    }
+
+    .page-hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .page-hero p {
+        font-size: 0.9rem;
+    }
+
+    /* STORY */
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .story-text p {
+        font-size: 0.9rem;
+    }
+
+    .story-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .story-stat .number {
+        font-size: 2rem;
+    }
+
+    /* TEAM */
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .member-photo img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .team-member h3 {
+        font-size: 1.2rem;
+    }
+   
+
+    /* VALUES */
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .value-item {
+        padding: 1.2rem;
+    }
+
+    .value-item h4 {
+        font-size: 1.2rem;
+    }
+
+    /* FACILITY */
+    .facility-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .facility-img {
+        height: 140px;
+    }
+
+    .facility-img img {
+        height: 140px;
+    }
+
+    .facility-item p {
+        font-size: 0.9rem;
+    }
+
+    /* FOOTER */
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        padding: 2rem 0;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+    }
+
+}
     </style>
 </head>
 <body>
-    <!-- NAVBAR (same as homepage, with active link) -->
+   <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="nav-container">
-             <a href="index.html">
-            <div class="logo">PR Metal ART <span>est. 2015</span></div></a>
+            <a href="#hero">
+    <div class="logo">
+        <img src="assets/main logo.png" alt="PR Metal ART Logo">
+        
+    </div>
+   </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#products">Products</a></li>
-                <li><a href="index.html#work">Work</a></li>
-                <li><a href="index.html#why-us">Why Us</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/index.html#services">Services</a></li>
+                <li><a href="/index.html#products">Products</a></li>
+                <li><a href="/index.html#work">Work</a></li>
+                <li><a href="/index.html#why-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
         </div>
     </nav>
-
     <!-- PAGE HERO -->
     <section class="page-hero">
         <div class="container">
             <h1>About <span class="orange">PR Metal ART</span></h1>
-            <p>Precision, partnership, and industrial excellence since 2015</p>
+            <p>Precision, partnership, and industrial excellence since 2014</p>
         </div>
     </section>
 
@@ -373,22 +549,22 @@
             <div class="story-grid">
                 <div class="story-text fade-in">
                     <h2>Our Story</h2>
-                    <p>Founded in Pune in 2015, PR Metal ART began with a single laser cutting machine and a vision to deliver world-class metal fabrication to Indian industries. Over the past decade, we've grown into a trusted partner for over 100 industrial clients, from automotive giants to infrastructure builders.</p>
-                    <p>What sets us apart is our relentless focus on precision. Every sheet we cut, every component we bend, is inspected to tolerances as tight as 0.1mm. Our investment in the latest laser technology and a highly skilled team ensures that even the most complex bulk orders are delivered on time, every time.</p>
-                    <p>Today, we operate from a 50,000 sq. ft. facility equipped with 5 high-power laser cutters, 8 CNC press brakes, and a dedicated quality lab. But our growth hasn't changed our core: we remain a family-run business that values long-term relationships over short-term gains.</p>
+                    <p><strong>PR Metal ART</strong> was founded in 2014 by <strong> Mr. Pankaj Jangid</strong> with a vision to deliver high-precision sheet metal manufacturing solutions for modern industries. Starting from a modest setup in Jaipur, the company has grown into a reliable manufacturing partner for businesses across India. With dedication, technical expertise, and a strong commitment to quality, PR Metal ART has built a reputation for delivering durable and precisely engineered metal products.</p>
+                    <p>Under the leadership of Mr. Pankaj Jangid, the company specializes in CNC laser cutting, sheet metal fabrication, bending, welding, and powder coating services. Over the years, PR Metal ART has successfully completed hundreds of industrial fabrication projects, manufacturing EV charging cabinets, electrical control boxes, solar cable trays, pharmaceutical industry components, and various custom sheet metal products.</p>
+                    <p>Today, our manufacturing facility in VKI Jaipur is equipped with advanced machinery and supported by skilled professionals who ensure precision, reliability, and quality in every product we manufacture. At PR Metal ART, we continue to focus on innovation, efficiency, and long-term partnerships with our clients, truly living by our promise — “Where Precision Meets Perfection.”</p>
                     <div class="story-stats">
                         <div class="story-stat">
-                            <div class="number" data-target="2015">0</div>
+                            <div class="number" data-target="2014">0</div>
                             <div>Founded</div>
                         </div>
                         <div class="story-stat">
-                            <div class="number" data-target="50">0</div>
+                            <div class="number" data-target="40">0</div>
                             <div>Skilled Workers</div>
                         </div>
                     </div>
                 </div>
                 <div class="story-image fade-in">
-                    <img src="https://placehold.co/600x400/2a2a2a/666?text=Factory+Floor" alt="Factory floor" style="width:100%; border: 2px solid #333;">
+                    <img src="assets/Company photo.jpg" alt="Factory floor" style="width:100%; border: 2px solid #333;">
                 </div>
             </div>
         </div>
@@ -446,55 +622,51 @@
             <div class="team-grid">
                <div class="team-member fade-in">
     <div class="member-photo">
-        <img src="images/ceo.jpg" alt="Rajesh Patil CEO" style="width:120px;height:120px;border-radius:50%;object-fit:cover;">
+        <img src="assets/Pankaj Jangid fonder of pr metal art.jpeg" alt="Pankaj jangid CEO" style="width:290px;height:290px;border-radius:50%;object-fit:cover;">
     </div>
-    <h3>Pankaj ji</h3>
+    <h3>Pankaj jangid</h3>
     <div class="position">Founder & CEO</div>
-    <p>25 years in metal fabrication. Rajesh leads with hands-on experience and a passion for precision.</p>
+    <p>25 years in metal fabrication. Pankaj jangid leads with hands-on experience and a passion for precision.</p>
      </div>
-                <div class="team-member fade-in">
-                    <div class="member-photo"><i class="fas fa-user-cog fa-4x" style="color:#f97316;"></i></div>
-                    <h3>Anita Deshmukh</h3>
-                    <div class="position">Head of Operations</div>
-                    <p>Ensures every order flows smoothly from laser cutting to dispatch.</p>
-                </div>
-                <div class="team-member fade-in">
-                    <div class="member-photo"><i class="fas fa-user-astronaut fa-4x" style="color:#f97316;"></i></div>
-                    <h3>Suresh Iyer</h3>
-                    <div class="position">Chief Technologist</div>
-                    <p>Drives our laser technology and quality assurance processes.</p>
-                </div>
-                <div class="team-member fade-in">
-                    <div class="member-photo"><i class="fas fa-user-tie fa-4x" style="color:#f97316;"></i></div>
-                    <h3>Meera Nair</h3>
-                    <div class="position">Client Relations</div>
-                    <p>Builds lasting partnerships with industrial clients across India.</p>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- FACILITY & TECHNOLOGY -->
     <section>
-        <div class="container">
-            <h2>Our Facility</h2>
-            <p class="section-subhead">State-of-the-art machines in a 50,000 sq. ft. plant</p>
-            <div class="facility-grid">
-                <div class="facility-item fade-in">
-                    <div class="facility-img"><i class="fas fa-laser fa-3x"></i> Laser bay</div>
-                    <p>5 high-power laser cutters (1–16mm capacity)</p>
+    <div class="container">
+        <h2>Our Facility</h2>
+        <p class="section-subhead">State-of-the-art machines in a 6000 sq. ft. plant</p>
+
+        <div class="facility-grid">
+
+            <div class="facility-item fade-in">
+                <div class="facility-img">
+                    <img src="assets/Banner L1.jpg" alt="Laser Cutting Machine">
                 </div>
-                <div class="facility-item fade-in">
-                    <div class="facility-img"><i class="fas fa-hammer fa-3x"></i> Bending section</div>
-                    <p>8 CNC press brakes with 6-axis backgauges</p>
-                </div>
-                <div class="facility-item fade-in">
-                    <div class="facility-img"><i class="fas fa-ruler-combined fa-3x"></i> Quality lab</div>
-                    <p>CMM, thickness gauges, and hardness testers</p>
-                </div>
+                <h3>Laser section </h3>
+                <p>5 high-power laser cutters (1–16mm capacity)</p>
             </div>
+
+            <div class="facility-item fade-in">
+                <div class="facility-img">
+                    <img src="assets/Banner B2.jpg" alt="Bending Machine">
+                </div>
+                <h3>Bending section</h3>
+                <p>8 CNC press brakes with 6-axis backgauges</p>
+            </div>
+
+            <div class="facility-item fade-in">
+                <div class="facility-img">
+                    <img src="assets/Banner W4.jpg" alt="Quality Lab">
+                </div>
+                <h3>Quality lab</h3>
+                <p>CMM, thickness gauges, and hardness testers</p>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- FOOTER (exactly like homepage) -->
     <footer class="footer">
@@ -531,9 +703,9 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
-                        <li><i class="fas fa-envelope"></i> info@prmetalart.in</li>
-                        <li><i class="fas fa-map"></i> Pune, India</li>
+                        <li><i class="fas fa-phone"></i> <a href=" tel: +919887666699" >+91 9887666699</a></li>
+                        <li><i class="fas fa-envelope"></i> prmetalart@gmail.com</li>
+                        <li><i class="fas fa-map"></i>  Plot No. 1, Nandpuri Bhadarna, Near Bhagwati Nursery, VKI Jaipur – 302013, India</li>
                     </ul>
                 </div>
             </div>
@@ -544,23 +716,31 @@
     </footer>
 
     <script>
-        (function() {
-            // Mobile hamburger
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('navLinks');
-            if (hamburger) {
-                hamburger.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                });
-            }
+   (function() {
+    // Mobile hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
 
-            // Close mobile menu on resize
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 900 && navLinks) {
-                    navLinks.classList.remove('active');
-                }
-            });
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
 
+    // Close menu on link click
+    const navItems = document.querySelectorAll('#navLinks a');
+    navItems.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Close mobile menu on resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 900 && navLinks) {
+            navLinks.classList.remove('active');
+        }
+    });
             // Smooth scroll for anchor links (only on same page)
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
